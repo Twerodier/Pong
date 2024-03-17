@@ -22,7 +22,7 @@ const ball = {
 
         if(this.x - this.radius < player1.x + player1.width && this.y > player1.y && this.y < player1.y + player1.height){
             this.dy += ((this.y - player1.y) / player1.height - .5) * 5
-            this.dx = -this.dx
+            this.dx = -this.dx * 1.1
         }
 
         if(this.x + this.radius > player2.x && this.y > player2.y && this.y < player2.y + player2.height){
@@ -30,7 +30,7 @@ const ball = {
             this.dx = -this.dx * 1.1
         }
         if(this.y < 0 + this.radius || this.y > canvas.height - this.radius){
-            this.dy = -this.dy * 1.1
+            this.dy = -this.dy
         }
         this.x += this.dx;
         this.y += this.dy;
