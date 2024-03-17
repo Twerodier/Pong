@@ -11,6 +11,7 @@ const ball = {
     radius: 10,
     dx: (Math.random() > .5) ? speed : -speed,
     dy: Math.random() - .5,
+    
     draw(){
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
@@ -26,10 +27,10 @@ const ball = {
 
         if(this.x + this.radius > player2.x && this.y > player2.y && this.y < player2.y + player2.height){
             this.dy += ((this.y - player2.y) / player2.height - .5) * 5
-            this.dx = -this.dx
+            this.dx = -this.dx * 1.1
         }
         if(this.y < 0 + this.radius || this.y > canvas.height - this.radius){
-            this.dy = -this.dy
+            this.dy = -this.dy * 1.1
         }
         this.x += this.dx;
         this.y += this.dy;
